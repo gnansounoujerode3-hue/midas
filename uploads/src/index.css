@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* MIDAS-Bénin — base commune Web et Android WebView */
+:root { color-scheme: light; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { scroll-behavior: smooth; min-height: 100%; background: #f8fafc; }
+body { min-width: 320px; min-height: 100%; margin: 0; overflow-x: hidden; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; overscroll-behavior-y: none; }
+#root { min-height: 100%; }
+input, select, textarea { font-size: 16px; }
+button, a, input, select, textarea { touch-action: manipulation; }
+button { -webkit-user-select: none; user-select: none; }
+
+/* Surfaces applicatives */
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; box-shadow: 0 1px 2px rgb(15 23 42 / .04); }
+.card-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid #f1f5f9; }
+.card-body { padding: 1.5rem; }
+.identity-page .did-card { background-color: #0f172a; background-image: linear-gradient(to bottom right, #1e293b, #0f172a); border-color: #1e293b; color: #fff; }
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 2.75rem; padding: .625rem 1rem; border: 1px solid #a7f3d0; border-radius: .75rem; color: #047857; background: #fff; font-weight: 500; transition: background .2s ease, border-color .2s ease; }
+.btn-outline:hover { border-color: #34d399; background: #ecfdf5; color: #047857; }
+
+/* Palette unique : MIDAS utilise exclusivement le vert émeraude. */
+.text-blue-300, .text-blue-500, .text-blue-600, .text-blue-700,
+.text-purple-300, .text-purple-500, .text-purple-600, .text-purple-700,
+.text-amber-400, .text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800,
+.text-orange-500, .text-orange-600,
+.text-red-500, .text-red-600, .text-red-700 { color: #059669 !important; }
+.bg-blue-50, .bg-purple-100, .bg-amber-50, .bg-red-50 { background-color: #ecfdf5 !important; }
+.bg-blue-100, .bg-purple-100, .bg-amber-100, .bg-orange-100, .bg-red-100 { background-color: #d1fae5 !important; }
+.bg-blue-500, .bg-purple-500, .bg-amber-500, .bg-orange-500, .bg-red-500, .bg-red-600 { background-color: #059669 !important; }
+.border-amber-200, .border-red-200 { border-color: #a7f3d0 !important; }
+.from-blue-500, .from-red-500, .from-purple-500, .from-amber-50 { --tw-gradient-from: #10b981 var(--tw-gradient-from-position) !important; }
+.to-indigo-600, .to-pink-600, .to-violet-600, .to-orange-50,
+.to-teal-50, .to-teal-500, .to-teal-600 { --tw-gradient-to: #059669 var(--tw-gradient-to-position) !important; }
+.from-emerald-100, .from-emerald-400, .from-emerald-500 { --tw-gradient-from: #10b981 var(--tw-gradient-from-position) !important; }
+
+/* Thème sombre : les règles sont placées APRÈS les surfaces standard afin de
+   ne jamais laisser une carte blanche sous un texte clair. */
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] #root,
+:root[data-theme="dark"] main { background: #0b1220; color: #e2e8f0; }
+:root[data-theme="dark"] .bg-white,
+:root[data-theme="dark"] [class*="bg-white/95"],
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .audit-page .audit-table tr { background-color: #1e293b !important; border-color: #334155 !important; }
+:root[data-theme="dark"] .bg-slate-50 { background-color: #0b1220 !important; }
+:root[data-theme="dark"] .bg-slate-100 { background-color: #334155 !important; }
+:root[data-theme="dark"] .bg-slate-200 { background-color: #475569 !important; }
+:root[data-theme="dark"] .bg-slate-300 { background-color: #64748b !important; }
+:root[data-theme="dark"] .bg-slate-400 { background-color: #94a3b8 !important; }
+:root[data-theme="dark"] .bg-emerald-50,
+:root[data-theme="dark"] .bg-blue-50,
+:root[data-theme="dark"] .bg-amber-50,
+:root[data-theme="dark"] .bg-red-50 { background-color: #062f2a !important; }
+:root[data-theme="dark"] .bg-emerald-100,
+:root[data-theme="dark"] .bg-blue-100,
+:root[data-theme="dark"] .bg-purple-100,
+:root[data-theme="dark"] .bg-amber-100,
+:root[data-theme="dark"] .bg-orange-100,
+:root[data-theme="dark"] .bg-red-100 { background-color: #064e3b !important; }
+:root[data-theme="dark"] .identity-page .did-card { background-color: #0f172a !important; background-image: linear-gradient(to bottom right, #1e293b, #0f172a) !important; border-color: #334155 !important; }
+:root[data-theme="dark"] .btn-outline { background: #1e293b; color: #d1fae5; border-color: #34d399; }
+:root[data-theme="dark"] .text-slate-800 { color: #f8fafc !important; }
+:root[data-theme="dark"] .text-slate-700 { color: #e2e8f0 !important; }
+:root[data-theme="dark"] .text-slate-600, :root[data-theme="dark"] .text-slate-500, :root[data-theme="dark"] .text-slate-400, :root[data-theme="dark"] .text-slate-300 { color: #cbd5e1 !important; }
+:root[data-theme="dark"] .text-emerald-600, :root[data-theme="dark"] .text-emerald-700,
+:root[data-theme="dark"] .text-blue-600, :root[data-theme="dark"] .text-blue-700,
+:root[data-theme="dark"] .text-purple-600, :root[data-theme="dark"] .text-purple-700,
+:root[data-theme="dark"] .text-amber-600, :root[data-theme="dark"] .text-amber-700, :root[data-theme="dark"] .text-amber-800,
+:root[data-theme="dark"] .text-orange-600, :root[data-theme="dark"] .text-red-600, :root[data-theme="dark"] .text-red-700 { color: #6ee7b7 !important; }
+:root[data-theme="dark"] .border-slate-200, :root[data-theme="dark"] .border-slate-100 { border-color: #334155 !important; }
+:root[data-theme="dark"] .border-emerald-200, :root[data-theme="dark"] .border-amber-200, :root[data-theme="dark"] .border-red-200 { border-color: #0f766e !important; }
+:root[data-theme="dark"] input, :root[data-theme="dark"] select { color: #f8fafc; }
+:root[data-theme="dark"] input::placeholder { color: #94a3b8; }
+:root[data-theme="dark"] option { background: #1e293b; color: #f8fafc; }
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] body, :root[data-theme="system"] #root, :root[data-theme="system"] main { background: #0b1220; color: #e2e8f0; }
+  :root[data-theme="system"] .bg-white, :root[data-theme="system"] .card { background-color: #1e293b !important; border-color: #334155 !important; }
+  :root[data-theme="system"] .text-slate-800 { color: #f8fafc !important; }
+  :root[data-theme="system"] .text-slate-700, :root[data-theme="system"] .text-slate-600, :root[data-theme="system"] .text-slate-500 { color: #cbd5e1 !important; }
+}
+
+@supports (min-height: 100dvh) { .min-h-screen { min-height: 100dvh; } }
+@supports (padding: max(0px)) { body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); } header { padding-top: env(safe-area-inset-top); } main { padding-bottom: max(1rem, env(safe-area-inset-bottom)); } }
+
+/* Adaptation téléphone */
+@media (max-width: 639px) {
+  main.p-4 { padding: 1rem .875rem calc(1.25rem + env(safe-area-inset-bottom)); }
+  .p-6 { padding: 1rem; } .px-6 { padding-left: 1rem; padding-right: 1rem; } .py-5 { padding-top: 1rem; padding-bottom: 1rem; } .py-4 { padding-top: .875rem; padding-bottom: .875rem; }
+  .grid.grid-cols-4, .grid.grid-cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .fixed.inset-0.z-50 { padding: max(.75rem, env(safe-area-inset-top)) .75rem max(.75rem, env(safe-area-inset-bottom)); }
+  .max-h-\[90vh\] { max-height: min(90vh, 90dvh); }
+  button:not(.p-2):not(.p-3) { min-height: 2.75rem; }
+  table { min-width: 640px; } th, td { font-size: .75rem; }
+  .w-80 { width: min(20rem, calc(100vw - 2rem)); } .sm\:w-96 { max-width: calc(100vw - 2rem); }
+  .identity-page .did-hero { padding: 1.25rem; } .identity-page .identity-summary { align-items: flex-start; gap: .75rem; } .identity-page .identity-summary h2 { font-size: 1.25rem; line-height: 1.65rem; overflow-wrap: anywhere; } .identity-page .identity-summary > div:last-child { min-width: 0; } .identity-page .identity-identifiers { gap: 1.25rem; }
+  .identity-page .identity-value { width: 100%; } .identity-page .identity-value > span { min-width: 0; flex: 1 1 auto; white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; word-break: break-word; } .identity-page .identity-value button { flex: 0 0 auto; min-height: 2.5rem; min-width: 2.5rem; }
+  .identity-page .identity-security-badges { gap: .5rem; margin-top: 1.25rem; } .identity-page .identity-security-badges > span { font-size: .75rem; line-height: 1rem; padding: .45rem .625rem; }
+  .identity-page .card-header { padding: 1rem; } .identity-page .card-body { padding: 1rem; } .identity-page .grid.md\:grid-cols-2.lg\:grid-cols-3 { grid-template-columns: 1fr; } .identity-page .credential-heading { align-items: flex-start; font-size: 1.1rem; line-height: 1.45rem; } .identity-page .credential-heading svg { flex: 0 0 auto; margin-top: .1rem; } .identity-page .credential-meta > div { align-items: flex-start; gap: .75rem; } .identity-page .credential-meta > div > span:last-child { max-width: 58%; overflow-wrap: anywhere; white-space: normal; text-overflow: clip; } .identity-page .btn-outline { width: 100%; margin-top: 1rem; } .identity-page .card.overflow-hidden { min-width: 0; }
+  .audit-page .audit-export { width: 100%; } .audit-page .audit-ledger-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .audit-page .audit-ledger-grid > div { padding: .875rem; } .audit-page .audit-filters select { width: 100%; min-height: 3rem; } .audit-page .audit-table { min-width: 0 !important; display: block; } .audit-page .audit-table thead { display: none; } .audit-page .audit-table tbody { display: block; } .audit-page .audit-table tr { display: block; margin: .75rem; overflow: hidden; border: 1px solid #e2e8f0; border-radius: .875rem; background: #fff; } .audit-page .audit-table td { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; max-width: none; padding: .75rem .875rem; white-space: normal; overflow: visible; text-overflow: clip; border-bottom: 1px solid #f1f5f9; } .audit-page .audit-table td::before { content: attr(data-label); flex: 0 0 5rem; color: #64748b; font-size: .75rem; font-weight: 600; } .audit-page .audit-table td:last-child { display: none; } .audit-page .audit-table td > div { min-width: 0; } .audit-page .audit-table td[data-label="Détails"] { display: block; } .audit-page .audit-table td[data-label="Détails"]::before { display: block; margin-bottom: .25rem; }
+}
+@media (max-width: 359px) { main.p-4 { padding-left: .625rem; padding-right: .625rem; } .rounded-3xl { border-radius: 1rem; } .text-2xl { font-size: 1.35rem; line-height: 1.75rem; } .grid.grid-cols-2 { gap: .625rem; } .identity-page .did-hero { padding: 1rem; } .identity-page .identity-summary { flex-wrap: wrap; } .identity-page .identity-summary > div:last-child { width: 100%; } .identity-page .identity-security-badges > span { width: 100%; justify-content: center; } .identity-page .credential-meta > div > span:last-child { max-width: 54%; } }
+@media (max-height: 540px) and (orientation: landscape) { header { position: relative !important; } .max-h-\[90vh\] { max-height: 82dvh; } .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.25rem; } }
+
+/* Tous les anciens dégradés sont volontairement remplacés par un vert émeraude
+   uniforme. Cette règle placée à la fin évite les boutons blancs au texte blanc. */
+.bg-gradient-to-r,
+.bg-gradient-to-br {
+  background-color: #059669 !important;
+  background-image: none !important;
+}
+/* La carte DID est la seule surface sombre structurelle du portefeuille. */
+.identity-page .did-card {
+  background-color: #0f172a !important;
+  background-image: linear-gradient(to bottom right, #1e293b, #0f172a) !important;
+}
+
+/* Contraste obligatoire à l'intérieur des panneaux vert émeraude.
+   Ces panneaux réutilisaient auparavant des textes amber, blue ou slate ;
+   après l'unification de palette ils ne doivent jamais avoir la même couleur
+   que leur arrière-plan. */
+.bg-gradient-to-r .text-slate-800,
+.bg-gradient-to-br .text-slate-800,
+.bg-gradient-to-r .text-slate-700,
+.bg-gradient-to-br .text-slate-700 { color: #ffffff !important; }
+.bg-gradient-to-r .text-slate-600,
+.bg-gradient-to-br .text-slate-600,
+.bg-gradient-to-r .text-slate-500,
+.bg-gradient-to-br .text-slate-500,
+.bg-gradient-to-r .text-slate-400,
+.bg-gradient-to-br .text-slate-400 { color: #d1fae5 !important; }
+.bg-gradient-to-r .text-emerald-600,
+.bg-gradient-to-br .text-emerald-600,
+.bg-gradient-to-r .text-emerald-700,
+.bg-gradient-to-br .text-emerald-700,
+.bg-gradient-to-r .text-amber-600,
+.bg-gradient-to-br .text-amber-600,
+.bg-gradient-to-r .text-amber-700,
+.bg-gradient-to-br .text-amber-700,
+.bg-gradient-to-r .text-amber-800,
+.bg-gradient-to-br .text-amber-800 { color: #ffffff !important; }
+.bg-gradient-to-r .border-amber-200,
+.bg-gradient-to-br .border-amber-200 { border-color: rgb(255 255 255 / .35) !important; }
+
+/* Une carte blanche peut être imbriquée dans un panneau vert (droits, export,
+   suppression). Elle doit conserver un texte sombre : cette règle annule le
+   contraste clair destiné au panneau parent vert. */
+.bg-gradient-to-r .bg-white .text-slate-800,
+.bg-gradient-to-br .bg-white .text-slate-800 { color: #1e293b !important; }
+.bg-gradient-to-r .bg-white .text-slate-700,
+.bg-gradient-to-br .bg-white .text-slate-700 { color: #334155 !important; }
+.bg-gradient-to-r .bg-white .text-slate-600,
+.bg-gradient-to-br .bg-white .text-slate-600 { color: #475569 !important; }
+.bg-gradient-to-r .bg-white .text-slate-500,
+.bg-gradient-to-br .bg-white .text-slate-500 { color: #64748b !important; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #10b981; border-radius: 9999px; }
+@keyframes pulse-ring { 0% { transform: scale(.8); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+@keyframes data-flow { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
