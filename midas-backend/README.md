@@ -31,7 +31,7 @@ Seules les clés publiques, les compteurs et les défis temporaires sont stocké
 
 ## Connexion depuis le téléphone Android
 
-- **Émulateur Android** : conservez `http://10.0.2.2:3000` dans `midas-android/app/build.gradle.kts`.
+- **Émulateur Android** : conservez `https://10.0.2.2:3443` dans `midas-android/app/build.gradle.kts`.
 - **Téléphone physique** : PC et téléphone doivent être sur le même Wi-Fi. L’application MIDAS essaie automatiquement `192.168.1.199` puis `192.168.1.200` et mémorise celle qui répond.
 - Le fichier `Lancer_MIDAS_Backend.bat` détecte et affiche l’adresse IPv4 actuelle du PC au démarrage.
 - Autorisez le port TCP `3000` dans le pare-feu Windows pour le réseau privé.

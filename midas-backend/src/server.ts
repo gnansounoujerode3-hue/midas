@@ -245,7 +245,7 @@ app.get('/api/v1/citizens/:citizenId', async (request, reply) => {
 
 const rpName = 'MIDAS-Bénin — démonstration académique';
 const rpID = process.env.WEBAUTHN_RP_ID ?? 'localhost';
-const expectedOrigin = process.env.WEBAUTHN_ORIGIN ?? `http://${rpID}:3000`;
+const expectedOrigin = process.env.WEBAUTHN_ORIGIN ?? `https://${rpID}:3443`;
 const challengeId = () => `challenge:${randomUUID()}`;
 
 // FIDO2/WebAuthn : seules les clés publiques et les compteurs sont persistés.

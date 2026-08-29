@@ -1,8 +1,8 @@
 # MIDAS-Bénin — contrôle de connectivité application / backend
 $ErrorActionPreference = 'Stop'
 $urls = @(
-    'http://192.168.1.200:3000',
-    'http://192.168.1.199:3000'
+    'https://192.168.1.200:3443',
+    'https://192.168.1.199:3443'
 )
 
 Write-Host ''
@@ -26,9 +26,9 @@ foreach ($url in $urls) {
 
 if ($null -eq $baseUrl) {
     Write-Host ''
-    Write-Host '[ERREUR] Aucun backend MIDAS ne repond sur .200 ou .199, port 3000.' -ForegroundColor Red
+    Write-Host '[ERREUR] Aucun backend MIDAS ne repond sur .200 ou .199, port 3443.' -ForegroundColor Red
     Write-Host 'Verifiez que Lancer_MIDAS_Backend.bat est ouvert, que le PC et le' -ForegroundColor Yellow
-    Write-Host 'telephone sont sur le meme Wi-Fi, et que le pare-feu autorise le port 3000.' -ForegroundColor Yellow
+    Write-Host 'telephone sont sur le meme Wi-Fi, et que le pare-feu autorise le port 3443.' -ForegroundColor Yellow
     Read-Host 'Appuyez sur Entree pour fermer'
     exit 1
 }

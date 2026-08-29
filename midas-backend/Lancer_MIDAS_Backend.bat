@@ -5,11 +5,11 @@ color 0A
 
 REM =====================================================================
 REM MIDAS-Benin - Lanceur backend local (Node.js 24 + SQLite integre)
-REM Le serveur ecoute sur toutes les interfaces : 0.0.0.0:3000
+REM Le serveur ecoute sur toutes les interfaces : 0.0.0.0:3443
 REM =====================================================================
 
 cd /d "%~dp0"
-set "PORT=3000"
+set "PORT=3443"
 
 echo.
 echo ================================================================
@@ -17,8 +17,8 @@ echo             MIDAS-Benin - Demarrage du backend
 echo ================================================================
 echo.
 echo Adresses telephone possibles :
-echo   http://192.168.1.200:%PORT%
-echo   http://192.168.1.199:%PORT%
+echo   https://192.168.1.200:%PORT%
+echo   https://192.168.1.199:%PORT%
 echo Dossier courant : %CD%
 echo.
 
@@ -58,7 +58,7 @@ if errorlevel 1 (
 )
 
 REM Essai non bloquant d'ouverture du port dans le pare-feu.
-netsh advfirewall firewall add rule name="MIDAS-Benin Backend 3000" dir=in action=allow protocol=TCP localport=%PORT% profile=private >nul 2>&1
+netsh advfirewall firewall add rule name="MIDAS-Benin Backend 3443" dir=in action=allow protocol=TCP localport=%PORT% profile=private >nul 2>&1
 
 echo [3/3] Backend pret.
 echo Testez ensuite avec Verifier_Symbiose_MIDAS.bat.

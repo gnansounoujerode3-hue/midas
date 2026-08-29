@@ -1,6 +1,6 @@
 # API MIDAS-Bénin — démonstration locale
 
-Base URL locale : `http://localhost:3000`
+Base URL locale : `https://localhost:3443`
 
 > Ces routes sont destinées au prototype académique avec données synthétiques. Elles n'implémentent ni ANIP réelle, ni APDP réelle, ni authentification de production.
 
